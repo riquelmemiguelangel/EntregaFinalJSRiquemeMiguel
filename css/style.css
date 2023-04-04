@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Permanent+Marker&family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@300;400;500&display=swap');
+/*      Selectores      */
+*{    font-family: 'Roboto',sans-serif;
+} 
+/* SELECTORES DE ETIQUETAS */
+body{
+    font-size: 62.5%;
+}
+header{
+    margin: 0 auto;
+}
+header img{
+    width: 100%;
+}
+svg{
+    height: 60px;
+    width: 60px;
+}
+nav div a img{
+    width: 120px;
+}
+/*Selectores de clase*/
+.texto-tipografia2{
+    font-family: 'Permanent Marker',sans-serif;
+    font-size: 1rem;
+}
+.texto-lobster{
+     font-family: 'Lobster',sans-serif;
+}
+.navegador{
+    background-color: greenyellow;
+}
+.pie{
+    background-color: rgb(88, 208, 230);
+    padding: 20px;
+}
+.texto-centrado{
+    text-align:center;
+}
+.texto-derecha{
+    text-align:right;
+}
+.bg-patron{
+    background-image: url(../images/backgrounds/bubble.png);
+}
+.bg-patron2{
+    background-image: url(../images/backgrounds/bg2.png);
+}
+.centrarimagen {
+    display: block;
+    margin: auto;
+}
+.texto-margen{
+padding: 2em;
+}
+
+
+  /*==============================GRIDS ===========================*/
+
+/*Definimos contenedor como GRID */
+.grid{
+	width:99%;
+	display: grid;
+}
+/*Definimos nuestro templates por áreas --- 3 cols - 3 rows - areas*/
+.template-areas{
+	grid-template-columns: repeat(3,1fr);
+	grid-template-rows: 100px 400px 150px;
+	grid-template-areas:
+	"celda1 celda3 celda5"  
+	"celda1 celda4 celda5" 
+	"celda2 celda4 celda5";
+}
+
+#celda3{
+	grid-area: celda3;
+}
+
+#celda5{
+	grid-area: celda5;
+}
+
+#celda1{
+	grid-area: celda1;
+}
+
+#celda2{
+	grid-area: celda2;
+}
+#celda4{
+	grid-area: celda4;
+}
+/*Posición de los elementos */
+.justify-items{
+	justify-items: center;
+}
+
+.align-items{
+	align-items: center;
+}
+
+
+.esquina-redonda{
+	border-radius: 1rem;
+}
+
+.bg-test{
+	border-color: red;
+	border-width: 2rem;
+	border-radius: 1rem;
+	border: dotted 1px deeppink;
+}
+.bg-grey{
+	background-color: grey;
+	}
+.bg-yellow{
+    background-color: yellow;
+    }
+.bg-blue{
+    background-color: blue;
+    }
+.bg-blue2{
+    background-color: rgb(20, 198, 221);
+    }
+.bg-celda2{
+    background-color: rgb(226, 120, 178);
+    }    
+
+
+/* nueva grilla productos*/
+.productos{
+    padding: 0 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.productos figure{
+    width: 30%;
+    border-radius: 4px;
+    border: solid gray 1px;
+    margin-bottom: 20px;
+}
+
+    .productos figure p{
+        font-size: 1rem;
+        line-height: 1.2rem;
+        margin: 20px 0;
+        text-align: left;
+    }
+
+    .productos figure img{
+        width: 100%;
+    }
+
+    .productos figure figcaption{
+        color: rgb(34, 150, 69);
+        font-size: 2.3rem;
+        margin-top: 10px;
+    }
+
+    .productos figure button{
+        border: solid;
+        background-color: rgb(58, 56, 148);
+        color: white;
+        border-radius: 8px;
+        padding:10px ;
+        margin-bottom: 20px;
+    }
+
+
+/*      media queries       */
+@media (width < 768px){
+    .template-areas{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5,auto);
+        grid-template-areas:
+        "celda1" 
+        "celda2" 
+        "celda3"
+        "celda4" 
+        "celda5";
+    }
+    svg{
+        height: 30px;
+        width: 30px;
+    }
+    /* productos */
+    .productos figure{
+        width: 100%;
+    }
+    .productos figure img{
+        width: 300px;
+    }
+    .productos p{
+        padding: 20px;
+        font-size: 1.6em;
+        line-height: 1.8em;
+    }
+    /*      Nosotros breakpoint      */
+    main div img{
+        margin: 0;
+        width: 100%;
+    }
+}
