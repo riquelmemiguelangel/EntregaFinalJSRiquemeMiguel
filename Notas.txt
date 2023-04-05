@@ -1,0 +1,4 @@
+
+
+"encender npm"
+npm run sass:watch
