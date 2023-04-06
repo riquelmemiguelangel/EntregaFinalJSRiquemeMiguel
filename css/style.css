@@ -1,26 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Permanent+Marker&family=Roboto:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@300;400;500&display=swap');
-/*      Selectores      */
-*{    font-family: 'Roboto',sans-serif;
-} 
-/* SELECTORES DE ETIQUETAS */
-body{
-    font-size: 62.5%;
-}
-header{
-    margin: 0 auto;
-}
-header img{
-    width: 100%;
-}
-svg{
-    height: 60px;
-    width: 60px;
-}
-nav div a img{
-    width: 120px;
-}
+
 /*Selectores de clase*/
 .texto-tipografia2{
     font-family: 'Permanent Marker',sans-serif;
