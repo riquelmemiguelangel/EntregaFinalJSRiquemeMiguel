@@ -18,3 +18,75 @@ svg{
 nav div a img{
     width: 120px;
 }
+
+/*Selectores de clase*/
+.texto-tipografia2{
+    font-family: 'Permanent Marker',sans-serif;
+    font-size: 1rem;
+}
+.texto-lobster{
+     font-family: 'Lobster',sans-serif;
+}
+.navegador{
+    background-color: greenyellow;
+}
+.pie{
+    background-color: rgb(88, 208, 230);
+    padding: 20px;
+}
+.texto-centrado{
+    text-align:center;
+}
+.texto-derecha{
+    text-align:right;
+}
+.bg-patron{
+    background-image: url(../images/backgrounds/bubble.png);
+}
+.bg-patron2{
+    background-image: url(../images/backgrounds/bg2.png);
+}
+.centrarimagen {
+    display: block;
+    margin: auto;
+}
+.texto-margen{
+padding: 2em;
+}
+
+
+/*Posición de los elementos */
+.justify-items{
+	justify-items: center;
+}
+
+.align-items{
+	align-items: center;
+}
+
+
+.esquina-redonda{
+	border-radius: 1rem;
+}
+
+.bg-test{
+	border-color: red;
+	border-width: 2rem;
+	border-radius: 1rem;
+	border: dotted 1px deeppink;
+}
+.bg-grey{
+	background-color: grey;
+	}
+.bg-yellow{
+    background-color: yellow;
+    }
+.bg-blue{
+    background-color: blue;
+    }
+.bg-blue2{
+    background-color: rgb(20, 198, 221);
+    }
+.bg-celda2{
+    background-color: rgb(226, 120, 178);
+    }     

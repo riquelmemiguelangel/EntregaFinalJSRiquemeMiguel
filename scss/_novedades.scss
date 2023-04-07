@@ -1,0 +1,35 @@
+ /*==============================GRIDS ===========================*/
+
+/*Definimos contenedor como GRID */
+.grid{
+	width:99%;
+	display: grid;
+}
+/*Definimos nuestro templates por áreas --- 3 cols - 3 rows - areas*/
+.template-areas{
+	grid-template-columns: repeat(3,1fr);
+	grid-template-rows: 100px 400px 150px;
+	grid-template-areas:
+	"celda1 celda3 celda5"  
+	"celda1 celda4 celda5" 
+	"celda2 celda4 celda5";
+}
+
+#celda3{
+	grid-area: celda3;
+}
+
+#celda5{
+	grid-area: celda5;
+}
+
+#celda1{
+	grid-area: celda1;
+}
+
+#celda2{
+	grid-area: celda2;
+}
+#celda4{
+	grid-area: celda4;
+}
