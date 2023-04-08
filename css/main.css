@@ -16,7 +16,6 @@ body {
 header {
   margin: 0 auto;
 }
-
 header img {
   width: 100%;
 }
@@ -30,6 +29,11 @@ nav div a img {
   width: 120px;
 }
 
+p {
+  font-size: 1.4em;
+  margin: 30px;
+}
+
 /*Selectores de clase*/
 .texto-tipografia2 {
   font-family: "Permanent Marker", sans-serif;
@@ -40,13 +44,11 @@ nav div a img {
   font-family: "Lobster", sans-serif;
 }
 
-.navegador {
-  background-color: greenyellow;
-}
-
 .pie {
-  background-color: rgb(88, 208, 230);
+  background-color: #FFFFFF;
+  background-image: linear-gradient(180deg, #f3c9c9 0%, #6284FF 50%, rgb(88, 208, 230) 100%);
   padding: 20px;
+  padding-bottom: 50px;
 }
 
 .texto-centrado {
@@ -114,6 +116,28 @@ nav div a img {
   background-color: rgb(226, 120, 178);
 }
 
+.navegador {
+  background-color: #85FFBD;
+  background-image: linear-gradient(45deg, rgb(49, 78, 6) 0%, #FFFB7D 100%);
+}
+.navegador div ul li a {
+  font-size: 1.8em;
+  color: rgb(44, 2, 68);
+}
+
+nav div a img {
+  border-radius: 0.3em;
+}
+
+.btn-centro {
+  text-align: center;
+}
+.btn-centro button {
+  margin: 5px;
+  margin-top: 15px;
+  padding: 30px;
+}
+
 /* nueva grilla productos*/
 .productos {
   padding: 0 30px;
@@ -122,31 +146,28 @@ nav div a img {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
 .productos figure {
   width: 30%;
   border-radius: 4px;
   border: solid gray 1px;
-  margin-bottom: 20px;
+  margin: 14px;
+  padding: 20px;
 }
-
 .productos figure p {
   font-size: 1rem;
   line-height: 1.2rem;
-  margin: 20px 0;
   text-align: left;
+  margin: 20px;
 }
-
 .productos figure img {
   width: 100%;
 }
-
 .productos figure figcaption {
   color: rgb(34, 150, 69);
   font-size: 2.3rem;
   margin-top: 10px;
+  text-align: center;
 }
-
 .productos figure button {
   border: solid;
   background-color: rgb(58, 56, 148);
@@ -154,6 +175,7 @@ nav div a img {
   border-radius: 8px;
   padding: 10px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 /*==============================GRIDS ===========================*/
@@ -188,6 +210,42 @@ nav div a img {
 
 #celda4 {
   grid-area: celda4;
+}
+
+.indexflex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/*      media queries       */
+@media (width < 768px) {
+  .template-areas {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: "celda1" "celda2" "celda3" "celda4" "celda5";
+  }
+  svg {
+    height: 30px;
+    width: 30px;
+  }
+  /* productos */
+  .productos figure {
+    width: 100%;
+  }
+  .productos figure img {
+    width: 300px;
+  }
+  .productos p {
+    padding: 20px;
+    font-size: 1.6em;
+    line-height: 1.8em;
+  }
+  /*      Nosotros breakpoint      */
+  main div img {
+    margin: 0;
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,7 +1,3 @@
-
-
-
-
 /*      media queries       */
 @media (width < 768px){
     .template-areas{
@@ -19,17 +15,23 @@
         width: 30px;
     }
     /* productos */
-    .productos figure{
-        width: 100%;
+    .productos {
+        figure{
+            width: 100%;
+            img{
+                width: 300px;
+            }
+        }
+
+        p{
+            padding: 20px;
+            font-size: 1.6em;
+            line-height: 1.8em;
+        }
     }
-    .productos figure img{
-        width: 300px;
-    }
-    .productos p{
-        padding: 20px;
-        font-size: 1.6em;
-        line-height: 1.8em;
-    }
+ 
+    
+ 
     /*      Nosotros breakpoint      */
     main div img{
         margin: 0;

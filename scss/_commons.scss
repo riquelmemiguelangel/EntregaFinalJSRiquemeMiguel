@@ -7,10 +7,11 @@ body{
 }
 header{
     margin: 0 auto;
+    img{
+        width: 100%;
+    }
 }
-header img{
-    width: 100%;
-}
+
 svg{
     height: 60px;
     width: 60px;
@@ -19,7 +20,12 @@ nav div a img{
     width: 120px;
 }
 
+p{
+    font-size: 1.4em;
+    margin: 30px;
+}
 /*Selectores de clase*/
+
 .texto-tipografia2{
     font-family: 'Permanent Marker',sans-serif;
     font-size: 1rem;
@@ -27,12 +33,15 @@ nav div a img{
 .texto-lobster{
      font-family: 'Lobster',sans-serif;
 }
-.navegador{
-    background-color: greenyellow;
-}
+
 .pie{
-    background-color: rgb(88, 208, 230);
+    // background-color: rgb(88, 208, 230);
+
+    background-color: #FFFFFF;
+    background-image: linear-gradient(180deg, #f3c9c9 0%, #6284FF 50%, rgb(88, 208, 230) 100%);
+
     padding: 20px;
+    padding-bottom: 50px;
 }
 .texto-centrado{
     text-align:center;
@@ -51,7 +60,7 @@ nav div a img{
     margin: auto;
 }
 .texto-margen{
-padding: 2em;
+    padding: 2em;
 }
 
 
