@@ -12,10 +12,6 @@ header{
     }
 }
 
-svg{
-    height: 60px;
-    width: 60px;
-}
 nav div a img{
     width: 120px;
 }
@@ -34,15 +30,7 @@ p{
      font-family: 'Lobster',sans-serif;
 }
 
-.pie{
-    // background-color: rgb(88, 208, 230);
 
-    background-color: #FFFFFF;
-    background-image: linear-gradient(180deg, #f3c9c9 0%, #6284FF 50%, rgb(88, 208, 230) 100%);
-
-    padding: 20px;
-    padding-bottom: 50px;
-}
 .texto-centrado{
     text-align:center;
 }
