@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass",
-		"sass:watch": "sass --watch scss/main.scss  css/main.css"
-
+    "sass:watch": "sass --watch scss/main.scss  css/main.css"
   },
   "author": "Miguel Angel Riquelme",
   "license": "ISC",
