@@ -20,6 +20,12 @@ header img {
   width: 100%;
 }
 
+.p404 {
+  display: block;
+  margin: auto;
+  width: 70%;
+}
+
 nav div a img {
   width: 120px;
 }
