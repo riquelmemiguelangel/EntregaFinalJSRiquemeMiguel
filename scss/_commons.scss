@@ -5,32 +5,53 @@
 body{
     font-size: 62.5%;
 }
+p{
+    font-size: $textoMd;
+}
 header{
     margin: 0 auto;
     img{
         width: 100%;
     }
 }
-
-.p404{
-  
-    display: block;
-    margin: auto;
-    width: 70%;
-        
-    
-}
-
 nav div a img{
     width: 120px;
 }
 
-p{
-    font-size: 1.4em;
-    margin: 30px;
-}
 /*Selectores de clase*/
+.p404{
+    background-color: #85FFBD;
+    background-image: linear-gradient(45deg, $color01 0%, #FFFB7D 100%);
+    display: flex;
+    // margin: auto;
+    div{
+        width: 40%;
+        border: 2rem;
+        border-radius: 2rem;
+        margin: 5px;
+        a{
+            width: 10%;
+            img{
+                margin: 20px;
+            }
+        }
+        p{
+            text-align: right;
+            margin: 0;
+            padding: 0;
+            font-size: 1.2rem;
+            color:map-get($map: $mcolor, $key: c01 );
+        }
+    }     
+}
 
+
+
+
+.img-e404{
+    margin: 25px;
+ 
+}
 .texto-tipografia2{
     font-family: 'Permanent Marker',sans-serif;
     font-size: 1rem;
@@ -39,7 +60,9 @@ p{
      font-family: 'Lobster',sans-serif;
 }
 
-
+.tLg{
+    font-size: 1.6rem;
+}
 .texto-centrado{
     text-align:center;
 }

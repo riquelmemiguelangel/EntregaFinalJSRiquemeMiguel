@@ -37,4 +37,19 @@
         margin: 0;
         width: 100%;
     }
+    /* Index */
+    .indexflex{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    main section div img{
+        margin: 0;
+        width: 60%;
+    }
+    .columna{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }    
 }

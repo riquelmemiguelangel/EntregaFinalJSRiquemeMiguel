@@ -1,21 +1,23 @@
+ .par1{
+	@include parrafo1(1.2rem,1.4rem ,$p1 )
+ }
+ 
  /*==============================GRIDS ===========================*/
 
 /*Definimos contenedor como GRID */
 .grid{
-	width:99%;
+	width:100%;
 	display: grid;
-	
 }
 /*Definimos nuestro templates por áreas --- 3 cols - 3 rows - areas*/
 .template-areas{
 	grid-template-columns: repeat(3,1fr);
-	grid-template-rows: 100px 400px 150px;
+	grid-template-rows: auto auto auto;
 	gap: 5px;
 	grid-template-areas:
 	"celda1 celda3 celda5"  
 	"celda1 celda4 celda5" 
 	"celda2 celda4 celda5";
-	
 }
 
 

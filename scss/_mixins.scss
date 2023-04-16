@@ -1,0 +1,51 @@
+//mapa de colores
+$mcolor: (
+    c01: rgb(49, 78, 6),
+    c02: rgb(65, 142, 194),
+    c03: rgb(58, 56, 148)
+);
+
+//Generales y Extendidos
+.boton-gral{
+    border: none;   
+    border-radius: 2rem;
+
+}
+.boton-sombra{
+    @extend .boton-gral;
+    box-shadow: 10px 10px 5px 0px rgba(176,32,32,0.81);
+}
+.boton-sombra2{
+    @extend .boton-gral;
+    margin: 5px;
+    background-color:  aqua;
+    padding: 20px;
+    box-shadow: 10px 10px 5px 0px rgba(176,32,32,0.81);
+}
+
+//box-shadow: 10px 10px 5px 0px rgba(176,32,32,0.81);
+//-webkit-box-shadow: 10px 10px 5px 0px rgba(176,32,32,0.81);
+//-moz-box-shadow: 10px 10px 5px 0px rgba(176,32,32,0.81);
+
+//mixins
+//formato parrafo
+//ejemplo
+// p{
+//  @include parrafo1(1.2rem,1.4rem ,$p1 )
+// }
+@mixin parrafo1($tamanio,$interlineado,$color){
+    font-size: $tamanio;
+    line-height: $interlineado;
+    color: $color;
+    font-family: sans-serif ;
+}
+
+// desarrollo flex
+@mixin flex1($direccion,$justificadoH,$justificadoV){
+    display: flex;
+    flex-direction: $direccion;
+    justify-content: $justificadoH;
+    align-items: $justificadoV;
+    text-align:center;
+}
+//@include flex1(row,center,center)
