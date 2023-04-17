@@ -361,7 +361,7 @@ nav div a img {
   font-size: 1rem;
   text-align: right;
 }
-.piepagina div { /* d-flex justify-content-around; */
+.piepagina div {
   margin-top: 30px;
   display: flex;
   justify-content: space-around;
