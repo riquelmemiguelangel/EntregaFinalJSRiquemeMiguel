@@ -289,6 +289,17 @@ nav div a img {
   text-align: center;
 }
 
+.form-configura {
+  margin: 0 auto;
+  width: 400px;
+  /* Esquema del formulario */
+  padding: 2em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+  font-size: 1.5em;
+  color: rgb(168, 19, 19);
+}
+
 /*      media queries       */
 @media (width < 768px) {
   .template-areas {
