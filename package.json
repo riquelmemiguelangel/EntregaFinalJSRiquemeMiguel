@@ -11,6 +11,7 @@
   "author": "Miguel Angel Riquelme",
   "license": "ISC",
   "dependencies": {
+    "node-sass": "^8.0.0",
     "sass": "^1.60.0"
   }
 }
