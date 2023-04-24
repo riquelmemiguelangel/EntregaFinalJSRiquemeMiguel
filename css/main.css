@@ -51,7 +51,7 @@ nav div a img {
   display: flex;
 }
 .p404 div {
-  width: 40%;
+  width: 80%;
   border: 2rem;
   border-radius: 2rem;
   margin: 5px;
@@ -67,7 +67,7 @@ nav div a img {
   margin: 0;
   padding: 0;
   font-size: 1.2rem;
-  color: rgb(49, 78, 6);
+  color: rgb(58, 56, 148);
 }
 
 .img-e404 {
@@ -279,6 +279,11 @@ nav div a img {
   margin: 30px;
 }
 
+iframe {
+  width: 80%;
+  height: 100%;
+}
+
 .boton {
   border: solid;
   background-color: rgb(58, 56, 148);
@@ -298,6 +303,15 @@ nav div a img {
   border-radius: 1em;
   font-size: 1.5em;
   color: rgb(168, 19, 19);
+}
+
+.contactoFlex {
+  display: flex;
+  margin: 20px;
+}
+.contactoFlex img {
+  width: 90%;
+  display: block;
 }
 
 /*      media queries       */
@@ -341,7 +355,7 @@ nav div a img {
   .columna {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: end;
   }
 }
 .piepagina {

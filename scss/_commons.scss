@@ -24,7 +24,7 @@ nav div a img{
     background-image: linear-gradient(45deg, $color01 0%, #FFFB7D 100%);
     display: flex;
     div{
-        width: 40%;
+        width: 80%;
         border: 2rem;
         border-radius: 2rem;
         margin: 5px;
@@ -39,7 +39,7 @@ nav div a img{
             margin: 0;
             padding: 0;
             font-size: 1.2rem;
-            color:map-get($map: $mcolor, $key: c01 );
+            color:map-get($map: $mcolor, $key: c03 );
         }
     }     
 }
