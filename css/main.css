@@ -44,6 +44,11 @@ nav div a img {
   width: 120px;
 }
 
+h1 {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
 /*Selectores de clase*/
 .p404 {
   background-color: #85FFBD;
@@ -105,6 +110,11 @@ nav div a img {
 
 .bgpatron4 {
   background-image: url(../images/backgrounds/bg4.png);
+}
+
+.bg-patron5 {
+  background-image: url(../images/backgrounds/bg5.png);
+  opacity: 0.8;
 }
 
 .centrarimagen {
@@ -327,50 +337,6 @@ iframe {
   align-self: center;
 }
 
-/*      media queries       */
-@media (width < 768px) {
-  .template-areas {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, auto);
-    grid-template-areas: "celda1" "celda2" "celda3" "celda4" "celda5";
-  }
-  svg {
-    height: 30px;
-    width: 30px;
-  }
-  /* productos */
-  .productos figure {
-    width: 100%;
-  }
-  .productos figure img {
-    width: 300px;
-  }
-  .productos p {
-    padding: 20px;
-    font-size: 1.6em;
-    line-height: 1.8em;
-  }
-  /*      Nosotros breakpoint      */
-  main div img {
-    margin: 0;
-    width: 100%;
-  }
-  /* Index */
-  .indexflex {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-  main section div img {
-    margin: 0;
-    width: 60%;
-  }
-  .columna {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-  }
-}
 .piepagina {
   background-color: #FFFFFF;
   background-image: linear-gradient(180deg, #f3c9c9 0%, #6284FF 50%, rgb(88, 208, 230) 100%);
@@ -397,6 +363,80 @@ iframe {
   width: 60px;
   height: 60px;
   fill: rgb(44, 52, 160);
+}
+
+/*      media queries       */
+@media (width < 768px) {
+  .template-areas {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: "celda1" "celda2" "celda3" "celda4" "celda5";
+  }
+  svg {
+    height: 30px;
+    width: 30px;
+  }
+  /* productos */
+  .productos figure {
+    width: 100%;
+  }
+  .productos figure img {
+    width: 300px;
+  }
+  .productos p {
+    padding: 20px;
+    font-size: 1.6em;
+    line-height: 1.8em;
+  }
+  /*      Nosotros breakpoint      */
+  main div img {
+    margin: 0;
+    width: 80%;
+  }
+  /* Index */
+  .indexflex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  main section div img {
+    margin: 0;
+    width: 60%;
+  }
+  .columna {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+}
+@media (width < 576px) {
+  .piepagina {
+    background-color: #FFFFFF;
+    background-image: linear-gradient(180deg, #f3c9c9 0%, #6284FF 50%, rgb(88, 208, 230) 100%);
+    margin-top: 5px;
+    padding: 10px;
+    padding-bottom: 30px;
+  }
+  .piepagina h2 {
+    font-family: "Lobster", sans-serif;
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  .piepagina h3 {
+    font-family: "Permanent Marker", sans-serif;
+    font-size: 1rem;
+    text-align: center;
+  }
+  .piepagina div {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .piepagina div a svg {
+    width: 40px;
+    height: 40px;
+    fill: rgb(238, 88, 108);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

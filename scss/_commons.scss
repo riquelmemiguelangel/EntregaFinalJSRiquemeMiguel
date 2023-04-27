@@ -17,7 +17,10 @@ header{
 nav div a img{
     width: 120px;
 }
-
+h1{
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
 /*Selectores de clase*/
 .p404{
     background-color: #85FFBD;
@@ -76,6 +79,10 @@ nav div a img{
 }
 .bgpatron4{
     background-image: url(../images/backgrounds/bg4.png);
+}
+.bg-patron5{
+    background-image: url(../images/backgrounds/bg5.png); 
+    opacity: 0.8;
 }
 .centrarimagen {
     display: block;

@@ -35,7 +35,7 @@
     /*      Nosotros breakpoint      */
     main div img{
         margin: 0;
-        width: 100%;
+        width: 80%;
     }
     /* Index */
     .indexflex{
@@ -52,4 +52,40 @@
         flex-direction: column;
         justify-content: end;
     }    
+}
+@media (width < 576px){
+    .piepagina{
+        background-color: #FFFFFF;
+        background-image: linear-gradient(180deg, #f3c9c9 0%, #6284FF 50%, rgb(88, 208, 230) 100%);
+        margin-top: 5px;
+        padding: 10px;
+        padding-bottom: 30px;
+        h2{
+          font-family:$Fuente2;
+          font-size: 1.3rem;
+          text-align:center;
+        }
+        h3{
+          font-family:$Fuente3;
+          font-size: 1rem;
+          text-align:center;
+        }
+        div {
+          margin-top: 10px;
+          display: flex;
+          justify-content: space-around;
+          a{
+            svg{
+              width: 40px;
+              height: 40px;
+              fill: rgb(238, 88, 108);
+            }
+          }
+        }
+      }
+      
+      
+      
+      
+
 }
