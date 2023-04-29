@@ -6,9 +6,11 @@
 .enlaceindex{
     @include flex1(row,center,center);
     font-size: 2rem;
-
 }
 .par2{
     @include parrafo1(1.2rem,1.4rem ,$p1 );
     margin: 30px;
+}
+.bg-patron5{
+    background-image: linear-gradient(180deg, #db8181 0%, #99adf8 50%, rgb(119, 236, 128) 100%);
 }

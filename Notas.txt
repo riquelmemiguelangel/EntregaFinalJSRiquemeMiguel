@@ -3,4 +3,4 @@
 "encender npm"
 npm run sass:watch
 npm install -g node-sass   me soluciono problemas
- npm install node-sass  
+npm install node-sass  

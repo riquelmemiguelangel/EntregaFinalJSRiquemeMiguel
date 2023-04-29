@@ -1,12 +1,26 @@
 iframe{
     width: 80%;
     height: 100%;
-   
+}
+
+textarea{
+    margin-bottom: 20px;
+}
+//clases
+
+.rotarder:hover{
+    transform: rotate(360deg);
+	transition: all 2s;
+	cursor: pointer;
+}
+.rotarizq:hover{
+    transform: rotate(-360deg);
+	transition: all 2s;
+	cursor: pointer;
 }
 .centro3{
     display: flex;
     justify-content: center;
-    
 }
 
 .boton{
@@ -19,30 +33,23 @@ iframe{
     text-align: center;
 }
 .form-configura{
-
     margin: 0 auto;
     width: 400px;
     /* Esquema del formulario */
     padding: 2em;
     border: 1px solid #CCC;
     border-radius: 1em;
-
     font-size: $textoMd;
     color: $p1;
-
 }
 .contactoFlex{
     display: flex;
     margin: 20px;
     justify-content: center;
     img{
-     
-        width: 90%;
-       
+         width: 90%;
     }
-  
 }
 .mapa{
-
     align-self: center;
 }

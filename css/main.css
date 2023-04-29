@@ -5,7 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
 .boton-gral, .boton-sombra2, .boton-sombra {
   border: none;
-  border-radius: 2rem;
+  border-radius: 1rem;
 }
 
 .boton-sombra {
@@ -51,32 +51,25 @@ h1 {
 
 /*Selectores de clase*/
 .p404 {
-  background-color: #85FFBD;
   background-image: linear-gradient(45deg, rgb(49, 78, 6) 0%, #FFFB7D 100%);
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0, 25px, 30px, 25px;
 }
-.p404 div {
-  width: 80%;
-  border: 2rem;
-  border-radius: 2rem;
-  margin: 5px;
+.p404 img {
+  border-radius: 1 rem;
+  width: 90%;
+  margin: auto;
 }
-.p404 div a {
-  width: 10%;
-}
-.p404 div a img {
-  margin: 20px;
-}
-.p404 div p {
-  text-align: right;
-  margin: 0;
-  padding: 0;
+.p404 p {
+  text-align: center;
   font-size: 1.2rem;
   color: rgb(58, 56, 148);
 }
 
-.img-e404 {
-  margin: 25px;
+.esquina {
+  border-radius: 0.5rem;
 }
 
 .texto-tipografia2 {
@@ -110,11 +103,6 @@ h1 {
 
 .bgpatron4 {
   background-image: url(../images/backgrounds/bg4.png);
-}
-
-.bg-patron5 {
-  background-image: url(../images/backgrounds/bg5.png);
-  opacity: 0.8;
 }
 
 .centrarimagen {
@@ -293,9 +281,29 @@ nav div a img {
   margin: 30px;
 }
 
+.bg-patron5 {
+  background-image: linear-gradient(180deg, #db8181 0%, #99adf8 50%, rgb(119, 236, 128) 100%);
+}
+
 iframe {
   width: 80%;
   height: 100%;
+}
+
+textarea {
+  margin-bottom: 20px;
+}
+
+.rotarder:hover {
+  transform: rotate(360deg);
+  transition: all 2s;
+  cursor: pointer;
+}
+
+.rotarizq:hover {
+  transform: rotate(-360deg);
+  transition: all 2s;
+  cursor: pointer;
 }
 
 .centro3 {
@@ -378,15 +386,16 @@ iframe {
   }
   /* productos */
   .productos figure {
-    width: 100%;
+    width: 90%;
   }
   .productos figure img {
-    width: 300px;
+    width: 80%;
   }
-  .productos p {
-    padding: 20px;
-    font-size: 1.6em;
-    line-height: 1.8em;
+  .productos figure p {
+    padding: 5px;
+    font-size: 1.5em;
+    line-height: 1.7em;
+    margin: 5px;
   }
   /*      Nosotros breakpoint      */
   main div img {
@@ -415,16 +424,16 @@ iframe {
     background-image: linear-gradient(180deg, #f3c9c9 0%, #6284FF 50%, rgb(88, 208, 230) 100%);
     margin-top: 5px;
     padding: 10px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
   }
   .piepagina h2 {
     font-family: "Lobster", sans-serif;
-    font-size: 1.3rem;
+    font-size: 1rem;
     text-align: center;
   }
   .piepagina h3 {
     font-family: "Permanent Marker", sans-serif;
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-align: center;
   }
   .piepagina div {
