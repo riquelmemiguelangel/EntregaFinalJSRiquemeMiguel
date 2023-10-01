@@ -15,7 +15,7 @@ let pass;
 let Nusuario;
 let bandera1;
 
-//sistema();
+sistema();
 function sistema(){
      while(salida){
         Nusuario = prompt("Bienvenido al Bufet JS-2023!!! <Ingreso de PEDIDO> \n\nHoy es: " + hoy.toLocaleString() +"\nProcesando..."+"\n\nSocios       - <Ingrese su nombre de USUARIO>\nMENU Listados y Registros- <Ingrese L>\nSalir            - <Presione X>\n\nSocios 20% de descuento");
