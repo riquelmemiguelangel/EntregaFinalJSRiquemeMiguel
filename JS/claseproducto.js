@@ -1,7 +1,3 @@
-const lsusuario1="";
-const lscontrasena1="";
-const lsapeynom1="";
-const lsdescuento1="";
 // datos de los productos
 class Producto {
     constructor(indice,tipo,descripcion,precio,stock,img){
@@ -63,15 +59,6 @@ class GestionarProductos{
     cargarProductos(productos){
         //const divProductos = document.getElementById("productos")
 
-        if (localStorage.getItem("lsusuario")){
-            let lsusuario2 =localStorage.getItem("lsusuario");
-            let lscontrasena2=localStorage.getItem("lscontrasena");
-            alert("Hay un usuario registrado");
-            //checkearCredenciales(lsusuario2,lscontrasena2);
-         }else{
-             alert("localstorage vacio");
-         }
-
         const divProductos = document.querySelector("#productos")
         divProductos.innerHTML = "" ;
 
@@ -96,7 +83,7 @@ class GestionarProductos{
                                 <div class="p-3 d-flex flex-column w-60 h-150">
                                     <h3>${descripcion}</h3>
                                     <p>${tipo}</p>
-                                    <p>Cantidad disonible: ${stock}</p>
+                                    <p>Cantidad disponible: ${stock}</p>
                                 </div>
 
                                 <div class="d-flex align-items-center justify-content-center flex-column w-20 h-150">
@@ -110,14 +97,4 @@ class GestionarProductos{
         }
     }
 }
-/*comienzo();
-function comienzo(){
-    if (localStorage.getItem("lsusuario")){
-       let lsusuario1 =localStorage.getItem("lsusuario");
-       let lscontrasena1=localStorage.getItem("lscontrasena");
-       alert("Hay un usuario registrado");
-       checkearCredenciales(lsusuario1,lscontrasena1);
-    }else{
-        alert("localstorage vacio");
-    }
-}*/
+

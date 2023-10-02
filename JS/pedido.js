@@ -7,23 +7,43 @@ let mensajeventa="";
 const key_carrito = "carrito";
 let acu_total = 0;
 
+
+let usuarioData ={
+    nombre:"",
+    contrasena:"",
+    apeynom:"",
+    descuento:""
+};
+
 //cuando este todo cargado recien ahi ejecuta lo qeu te pongo
 document.addEventListener("DOMContentLoaded",()=>{
     //utilizo operador or para chequear si hay algo en localstorage
-    carrito = JSON.parse(localStorage.getItem(key_carrito)) || [] ;
+    
+    
+    //carrito = JSON.parse(localStorage.getItem(key_carrito)) || [] ;
     
     ///// ACA INICIAMOSA EL DOM DESDE JS - > PEDIDO.HTML
-    if (localStorage.getItem("lsusuario")){
-        let lsusuario2 =localStorage.getItem("lsusuario");
-        let lscontrasena2=localStorage.getItem("lscontrasena");
-        alert("Hay un usuario registrado");
-    }else{
-         alert("localstorage vacio");
-     }
 
+    if(localStorage.getItem("usuarioData")){
+        let storedData = JSON.parse(localStorage.getItem("usuarioData"));
+        
+        let lsusuario1= storedData.nombre;
+        let lsusuario2= storedData.contrasena;
+        let lsusuario3= storedData.apeynom;
+        let lsusuario4= storedData.descuento;
+        let usuarioInfo = document.querySelector("infoUsuario");
+        usuarioInfo.innerHTML =`
+            Usuario: ${lsusuario1}<br>
+            Contraseña: ${lsusuario2}<br>
+            Nombre Completo: ${lsusuario3}<br>
+            Descuento: ${lsusuario4}
+        `
+    }else{
+        alert("localstorage vacio 22");
+    }
+    
     gestor = new GestionarProductos();
     gestor.iniciar();
-
 })
 
 

@@ -1,9 +1,13 @@
 
 //Variables generales
-const lsusuario="";
-const lscontrasena="";
-const lsapeynom="";
-const lsdescuento="";
+
+let usuarioData ={
+    nombre:"",
+    contrasena:"",
+    apeynom:"",
+    descuento:""
+};
+
 let apeynom ="";
 let salida = true;
 let salidaComida=true;
@@ -39,8 +43,7 @@ boton.addEventListener("click", function (evento) {
 const boton2 = document.querySelector("#logueoout");
 boton2.addEventListener("click", function (evento) {
     alert("borrado");
-    localStorage.removeItem("lsusuario");
-    localStorage.removeItem("lscontrasena");
+     localStorage.removeItem("usuarioData");
 });
 //Ingreso de usuario - validar descuento
 function checkearCredenciales(user, pass) {
@@ -50,21 +53,21 @@ function checkearCredenciales(user, pass) {
         
         let logueoapeynom =document.getElementById("usuariologueado");
         logueoapeynom.innerText= apeynom;
-        localStorage.setItem("lsusuario",user);
-        localStorage.setItem("lscontrasena",pass);
-
-        localStorage.setItem("lsapeynom",apeynom);
-        localStorage.setItem("lsdescuento",pass);
+        let descontar="";
         let logueodescuento =document.getElementById("descuentocliente");
         if(login.getCliente().getDescuento()=="Y"){
-            localStorage.setItem("lsdescuento",true);
+            descontar="Y";
             descuento=true;
             logueodescuento.innerText= "Socio con descuento";
         }else{
-            localStorage.setItem("lsdescuento",true);
+            descontar="N";
             logueodescuento.innerText="Cliente SIN descuento";
         }
-        
+        usuarioData.nombre=user;
+        usuarioData.contrasena=pass;
+        usuarioData.apeynom=apeynom;
+        usuarioData.descuento= descontar;
+        localStorage.setItem("usuarioData", JSON.stringify(usuarioData));
     } else {
         alert("Credenciales incorrectas");
     }
@@ -72,106 +75,20 @@ function checkearCredenciales(user, pass) {
 
 comienzo();
 function comienzo(){
-    if (localStorage.getItem("lsusuario")){
-       let lsusuario1 =localStorage.getItem("lsusuario");
-       let lscontrasena1=localStorage.getItem("lscontrasena");
-       alert("Hay un usuario registrado");
-       checkearCredenciales(lsusuario1,lscontrasena1);
-    }else{
-        alert("localstorage vacio");
-    }
-}
-
-//sistema();
-/*
-function sistema(){
-     while(salida){
-        Nusuario = prompt("Bienvenido al Bufet JS-2023!!! <Ingreso de PEDIDO> \n\nHoy es: " + hoy.toLocaleString() +"\nProcesando..."+"\n\nSocios       - <Ingrese su nombre de USUARIO>\nMENU Listados y Registros- <Ingrese L>\nSalir            - <Presione X>\n\nSocios 20% de descuento");
-        if (Nusuario == "x"||Nusuario == "X"){
-            salida=false;
-            return;
-        }
-        if ((Nusuario) == "L" || (Nusuario) == "l"){
-            menuListado();
-            return;
-        }
-        //Validar Usuario
-        pass = prompt("Ingrese su contraseña");
-        if (Nusuario && pass) {
-            bandera1=checkearCredenciales(Nusuario, pass);
-            if (bandera1 == 1){
-                salida=true;
-                return;
-            }
-        } else {
-            alert("Es necesario ingresar usuario y contraseña");
-            return;
+        if(localStorage.getItem("usuarioData")){
+            let storedData = JSON.parse(localStorage.getItem("usuarioData"));
+            let lsusuario1= storedData.nombre;
             
-        }
-        
-        while(salidaComida){
-            let mensajelistaproducto = listado_Producto("Comida");
-            let opcion =prompt("\nSeleccione su comida\n\n " + mensajelistaproducto + "\n\n< c  >  » Continuar"+ "\n\n Seleccion:");
-            if (opcion == "c" || opcion == "c"){
-                salidaComida=false;
-            }else{
-                armadocomida(opcion);
-            }
-        }
-        salidaComida=true;
-
-
-        while(salidaBebida){
-            mensajelistaproducto = listado_Producto("Bebida");
-            let opcion =prompt("\nSeleccione su bebida\n\n " + mensajelistaproducto + "\n\n< c  >  » Continuar"+ "\n\n Seleccion:");
-            if (opcion == "c" || opcion == "C"){
-                salidaBebida=false;
-            }else{
-                armadobebida(opcion);
-            }
-        }
-        salidaBebida=true;
-        
-        if(acu_total==0){
-            alert("Cliente "+apeynom +" NO realizo Pedido");
+            let lsusuario2= storedData.contrasena;
+            //let lsusuario3= storedData.apeynom;
+            //let lsusuario4= storedData.descuento;
+            checkearCredenciales(lsusuario1,lsusuario2);
         }else{
-            if(descuento){
-                acu_total=acu_total-(acu_total*20/100);
-                MensajeComida= MensajeComida+"\nDescuento por socio";
-            }
-            MensajeComida="\nPedido de Cliente: "+apeynom+"\n"+MensajeComida;
-            alert(MensajeComida +"\n\nTotal $"+acu_total);
-            acu_total=0;
-            descuento=false;
-            MensajeComida="";
-        }   
-   
-    }
-}//fin de funcion sistema - Bloque PRINCIPAL del programa.
+            alert("localstorage vacio");
+        }
+}
 
 
-//  COMIENZAN LAS FUNCIONES A UTILIZAR.    
-// armado de comida    
-function armadocomida(caso){
-	let resultado = coleccion_productos.find((w) => w.tipo == "Comida" && w.indice == caso);
-	if (!resultado) {
-		alert("Dato seleccionado no corresponde -indefenido");
-	} else {
-		acu_total = acu_total + resultado.precio;
-		MensajeComida = MensajeComida + "\n" + resultado.descripcion + " - " + resultado.precio;
-	}
-}
-//armado de bebida
-function armadobebida(caso){
-    let resultado = coleccion_productos.find((w) => w.tipo == "Bebida" && w.indice == caso);
-    if (!resultado) {
-        alert("indefenido");
-    } else {
-        acu_total=  acu_total + resultado.precio;
-        MensajeComida = MensajeComida +"\n" + resultado.descripcion +" - " + resultado.precio;
-    }
-}
- */
 
 
 
