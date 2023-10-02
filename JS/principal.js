@@ -1,5 +1,7 @@
 
 //Variables generales
+const lsusuario="";
+const lscontrasena="";
 let apeynom ="";
 let salida = true;
 let salidaComida=true;
@@ -15,7 +17,65 @@ let pass;
 let Nusuario;
 let bandera1;
 
-sistema();
+// Obtener referencia a botón
+const boton = document.querySelector("#logueo");
+boton.addEventListener("click", function (evento) {
+    let ingresousuario =document.getElementById("usuario").value;
+    let ingresocontrasena =document.getElementById("contrasena").value;
+    if (ingresousuario && ingresocontrasena) {
+        //alert(ingresousuario);
+        checkearCredenciales(ingresousuario,ingresocontrasena);
+        document.getElementById("contrasena").value ="";
+        document.getElementById("usuario").value ="";
+    } else {
+        alert("Es necesario ingresar usuario y contraseña");
+        return;
+        
+    }
+});
+// borrar local storage
+const boton2 = document.querySelector("#logueoout");
+boton2.addEventListener("click", function (evento) {
+    alert("borrado");
+    localStorage.removeItem("lsusuario");
+    localStorage.removeItem("lscontrasena");
+});
+//Ingreso de usuario - validar descuento
+function checkearCredenciales(user, pass) {
+    let login = colleccion_logines.find((l) => l.user === user && l.pass == pass);
+    if (login) {
+        apeynom=login.getCliente().getNombreCompleto();
+        let logueoapeynom =document.getElementById("usuariologueado");
+        logueoapeynom.innerText= apeynom;
+        localStorage.setItem("lsusuario",user);
+        localStorage.setItem("lscontrasena",pass);
+        let logueodescuento =document.getElementById("descuentocliente");
+        if(login.getCliente().getDescuento()=="Y"){
+            descuento=true;
+            logueodescuento.innerText= "Socio con descuento";
+        }else{
+            logueodescuento.innerText="Cliente SIN descuento";
+
+        }
+        
+    } else {
+        alert("Credenciales incorrectas");
+    }
+}
+
+comienzo();
+function comienzo(){
+    if (localStorage.getItem("lsusuario")){
+       let lsusuario1 =localStorage.getItem("lsusuario");
+       let lscontrasena1=localStorage.getItem("lscontrasena");
+       alert("Hay un usuario registrado");
+       checkearCredenciales(lsusuario1,lscontrasena1);
+    }else{
+        alert("localstorage vacio");
+    }
+}
+
+//sistema();
 function sistema(){
      while(salida){
         Nusuario = prompt("Bienvenido al Bufet JS-2023!!! <Ingreso de PEDIDO> \n\nHoy es: " + hoy.toLocaleString() +"\nProcesando..."+"\n\nSocios       - <Ingrese su nombre de USUARIO>\nMENU Listados y Registros- <Ingrese L>\nSalir            - <Presione X>\n\nSocios 20% de descuento");
@@ -104,21 +164,7 @@ function armadobebida(caso){
     }
 }
 
-//Ingreso de usuario - validar descuento
-function checkearCredenciales(user, pass) {
-    let login = colleccion_logines.find((l) => l.user === user && l.pass == pass);
-    if (login) {
-        apeynom=login.getCliente().getNombreCompleto();
-        //alert(login.getCliente().getDescuento());
-        if(login.getCliente().getDescuento()=="Y"){
-            descuento=true;
-        }
-        return 4;
-    } else {
-        alert("Credenciales incorrectas");
-        return 1;
-    }
-}
+
 
 function menuListado(){
     let salida=true;

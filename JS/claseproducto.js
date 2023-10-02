@@ -1,4 +1,4 @@
-6// datos de los productos
+// datos de los productos
 class Producto {
     constructor(indice,tipo,descripcion,precio,stock,img){
         this.indice = indice ;
@@ -16,14 +16,14 @@ class Producto {
     }
 }
 //Carga de datos BD PRODUCTOS
-let producto1 = new Producto(1,"Bebida","Gaseosa",700);
-let producto2 = new Producto(2,"Bebida","Agua",500);
-let producto3 = new Producto(3,"Bebida","Cafe",600);
-let producto4 = new Producto(4,"Comida","Hamburguesa",900);
-let producto5 = new Producto(5,"Comida","Pancho",650);
-let producto6 = new Producto(6,"Comida","Emparedado Jamon y queso",800);
-let producto7 = new Producto(7,"Postre","Helado dulce de leche",650);
-let producto8 = new Producto(8,"Postre","Torta ricota",680);
+let producto1 = new Producto(1,"Bebida","Gaseosa",600,50,"gaseosa.jpeg");
+let producto2 = new Producto(2,"Bebida","Jugo de naranja",700,50,"jugonaranja.jpeg");
+let producto3 = new Producto(3,"Bebida","Cafe",300,50,"cafe.jpeg");
+let producto4 = new Producto(4,"Comida","Hamburguesa",600,50,"hamburguesa.jpeg");
+let producto5 = new Producto(5,"Comida","Pancho",500,50,"pancho.jpeg");
+let producto6 = new Producto(6,"Comida","Emparedado Jamon y queso",800,50,"jyq.jpeg");
+let producto7 = new Producto(7,"Postre","Helado dulce de leche",600,50,"helado.jpeg");
+let producto8 = new Producto(8,"Postre","Torta ricota",700,50,"ricota.jpeg");
 
 let coleccion_productos = new Array();
 coleccion_productos.push(producto1);
@@ -76,11 +76,11 @@ class GestionarProductos{
         const divProductos = document.querySelector("#productos")
         divProductos.innerHTML = "" ;
 
-        if (productos.length == 0 ){
+        if (coleccion_productos.length == 0 ){
             console.log("No se han encontrado productos");
         }else{
 
-            productos.forEach(producto => {
+            coleccion_productos.forEach(producto => {
 
                 const {indice,tipo,descripcion,precio,stock,img} =  producto;
 
@@ -113,12 +113,13 @@ class GestionarProductos{
 
 
     listadepedido(item){
-        this.actualizarCarrito();
-        const {indice,tipo,descripcion,precio,stock,img}= productos.filter (prod => prod.indice == 1) ;
-        alert("filaaaa" + tipo);
-        carrito.push(filaitem);
+        //this.mostrarpedido();
+        //this.actualizarCarrito();
+        venta= coleccion_productos.filter (prod => prod.indice == 1) ;
+        //alert("filaaaa" + tipo);
+        carrito.push(venta.indice,venta.tipo,venta.descripcion,venta.precio,venta.stock,venta.img);
        
-        this.actualizarCarrito();
+        //this.mostrarpedido();
     }
     addCart(item){
           const existe = carrito.some(producto => producto.indice === item.indice) ;
@@ -150,7 +151,7 @@ class GestionarProductos{
     }
 
 
-    mostarpedido(){
+    mostrarpedido(){
 
         const detalleCarrito = document.querySelector("#pedidolista");
         detalleCarrito.innerHTML = "" ;  
@@ -158,15 +159,15 @@ class GestionarProductos{
         row.classList.add("row");
 
         row.innerHTML = `
-                            <div class="col-3 d-flex align-items-center p-2 border-bottom">
-                                <p> fila </p>                                    
+                            <div class="col-12 d-flex align-items-center p-2 border-bottom">
+                                <p> fila mostrar pedido hasta aca llegamos</p>                                    
                             </div>.
                                     
                         `
 
         detalleCarrito.append(row);
 
-        carrito.forEach((producto)=>{
+        coleccion_productos.forEach((producto)=>{
 
             //const {id,nombre,precio,img,cantidad} = producto;
 
@@ -175,7 +176,8 @@ class GestionarProductos{
 
             row.innerHTML = `
                                 <div class="col-3 d-flex align-items-center p-2 border-bottom">
-                                    <p fila />                                    
+                                    <p> fila <p/>       
+                                    <p class="precio">$${precio}</p>                             
                                 </div>.
                                         
                             `

@@ -1,9 +1,9 @@
 
 let carrito = [] ;
 let productos = new Array() ;
-
+let venta = new Array ();
 let gestor ;
-
+let mensajeventa="";
 const key_carrito = "carrito";
 
 //cuando este todo cargado recien ahi ejecuta lo qeu te pongo
@@ -27,22 +27,18 @@ document.querySelector("#buscar").addEventListener("keyup",()=>{
 })
 
 function addCarrito (indice){
-    alert(indice);
-    const prod = document.querySelector("#row_" + indice) ;
+    let resultado = coleccion_productos.find((w) =>  w.indice == indice);
+   mensajeventa = mensajeventa + "<br>      ---> " + resultado.descripcion + " precio =$"+resultado.precio;
+    const detalleCarrito = document.querySelector("#pedidolista");
+    detalleCarrito.innerHTML = "" ;  
+    const row = document.createElement("div");
+    row.classList.add("row");
 
-    let titulo = "titulo";//prod.querySelector("h3").textContent;
-
-    //alert(titulo);
-    //corto el simbolo $-----ej: $8600  -> 8600
-    //let precio = prod.querySelector(".precio").textContent.substring(1,prod.querySelector(".precio").textContent.length);
-    
-    //let img = prod.querySelector ("img").src ;
-
-    //let producto = new Producto(indice,tipo,precio,img);
-
-    //gestor.addCart(producto);    
+    row.innerHTML = `
+                        <div class="col-12 d-flex align-items-center p-2 border-bottom">
+                            <h3> ${mensajeventa} </h3>                                    
+                        </div>.
+                    `
+    detalleCarrito.append(row);
     gestor.listadepedido(indice);    
-
-
-
 }
