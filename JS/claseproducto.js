@@ -1,3 +1,7 @@
+const lsusuario1="";
+const lscontrasena1="";
+const lsapeynom1="";
+const lsdescuento1="";
 // datos de los productos
 class Producto {
     constructor(indice,tipo,descripcion,precio,stock,img){
@@ -14,6 +18,8 @@ class Producto {
     mostrarListado(){
         return this.descripcion+" -- "+this.tipo+" - $"+this.precio;
     }
+
+    
 }
 //Carga de datos BD PRODUCTOS
 let producto1 = new Producto(1,"Bebida","Gaseosa",600,50,"gaseosa.jpeg");
@@ -36,6 +42,7 @@ coleccion_productos.push(producto7);
 coleccion_productos.push(producto8);
 
 
+
 class GestionarProductos{
     iniciar(){
         productos = [
@@ -47,32 +54,24 @@ class GestionarProductos{
                 "stock": 50,
                 "img": "pancho.jpeg"
             },
-
-            {
-                "indice": 2,
-                "tipo": "bebida",
-                "descripcion": "cafe",
-                "precio": 300,
-                "stock": 50,
-                "img": "cafe.jpeg"
-            },
-            
-
         ]
-
-
-       // let productosDestacados = productos.filter (prod => prod.destacado == 1) ;
-
-
         this.cargarProductos(productos);
-
-
-
     }
+  
 
 
     cargarProductos(productos){
         //const divProductos = document.getElementById("productos")
+
+        if (localStorage.getItem("lsusuario")){
+            let lsusuario2 =localStorage.getItem("lsusuario");
+            let lscontrasena2=localStorage.getItem("lscontrasena");
+            alert("Hay un usuario registrado");
+            //checkearCredenciales(lsusuario2,lscontrasena2);
+         }else{
+             alert("localstorage vacio");
+         }
+
         const divProductos = document.querySelector("#productos")
         divProductos.innerHTML = "" ;
 
@@ -110,90 +109,15 @@ class GestionarProductos{
             });
         }
     }
-
-
-    listadepedido(item){
-        //this.mostrarpedido();
-        //this.actualizarCarrito();
-        venta= coleccion_productos.filter (prod => prod.indice == 1) ;
-        //alert("filaaaa" + tipo);
-        carrito.push(venta.indice,venta.tipo,venta.descripcion,venta.precio,venta.stock,venta.img);
-       
-        //this.mostrarpedido();
-    }
-    addCart(item){
-          const existe = carrito.some(producto => producto.indice === item.indice) ;
-        if (existe){
-            const articulo = carrito.map(producto =>{
-                if (producto.indice === item.indice ){
-                    //producto.cantidad++;
-                    return producto;
-                }else{
-                    return producto ;
-                }
-
-            })
-
-        }else{
-            carrito.push(item);
-            alert("producto agregado con exito");
-        }
-        this.mostarpedido();
-        //this.actualizarCarrito();
-    }
-
-
-    actualizarCarrito(){
-        //actualizar el contador
-        //this.actualizarContador();
-        this.mostarpedido();
-        //this.guardarCarrito();
-    }
-
-
-    mostrarpedido(){
-
-        const detalleCarrito = document.querySelector("#pedidolista");
-        detalleCarrito.innerHTML = "" ;  
-        const row = document.createElement("div");
-        row.classList.add("row");
-
-        row.innerHTML = `
-                            <div class="col-12 d-flex align-items-center p-2 border-bottom">
-                                <p> fila mostrar pedido hasta aca llegamos</p>                                    
-                            </div>.
-                                    
-                        `
-
-        detalleCarrito.append(row);
-
-        coleccion_productos.forEach((producto)=>{
-
-            //const {id,nombre,precio,img,cantidad} = producto;
-
-            const row = document.createElement("div");
-            row.classList.add("row");
-
-            row.innerHTML = `
-                                <div class="col-3 d-flex align-items-center p-2 border-bottom">
-                                    <p> fila <p/>       
-                                    <p class="precio">$${precio}</p>                             
-                                </div>.
-                                        
-                            `
-
-            detalleCarrito.append(row);
-
-
-        })
-
-
-    }
-
-
-
-
-
-
-
 }
+/*comienzo();
+function comienzo(){
+    if (localStorage.getItem("lsusuario")){
+       let lsusuario1 =localStorage.getItem("lsusuario");
+       let lscontrasena1=localStorage.getItem("lscontrasena");
+       alert("Hay un usuario registrado");
+       checkearCredenciales(lsusuario1,lscontrasena1);
+    }else{
+        alert("localstorage vacio");
+    }
+}*/

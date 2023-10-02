@@ -2,6 +2,8 @@
 //Variables generales
 const lsusuario="";
 const lscontrasena="";
+const lsapeynom="";
+const lsdescuento="";
 let apeynom ="";
 let salida = true;
 let salidaComida=true;
@@ -45,17 +47,22 @@ function checkearCredenciales(user, pass) {
     let login = colleccion_logines.find((l) => l.user === user && l.pass == pass);
     if (login) {
         apeynom=login.getCliente().getNombreCompleto();
+        
         let logueoapeynom =document.getElementById("usuariologueado");
         logueoapeynom.innerText= apeynom;
         localStorage.setItem("lsusuario",user);
         localStorage.setItem("lscontrasena",pass);
+
+        localStorage.setItem("lsapeynom",apeynom);
+        localStorage.setItem("lsdescuento",pass);
         let logueodescuento =document.getElementById("descuentocliente");
         if(login.getCliente().getDescuento()=="Y"){
+            localStorage.setItem("lsdescuento",true);
             descuento=true;
             logueodescuento.innerText= "Socio con descuento";
         }else{
+            localStorage.setItem("lsdescuento",true);
             logueodescuento.innerText="Cliente SIN descuento";
-
         }
         
     } else {
@@ -76,6 +83,7 @@ function comienzo(){
 }
 
 //sistema();
+/*
 function sistema(){
      while(salida){
         Nusuario = prompt("Bienvenido al Bufet JS-2023!!! <Ingreso de PEDIDO> \n\nHoy es: " + hoy.toLocaleString() +"\nProcesando..."+"\n\nSocios       - <Ingrese su nombre de USUARIO>\nMENU Listados y Registros- <Ingrese L>\nSalir            - <Presione X>\n\nSocios 20% de descuento");
@@ -163,91 +171,10 @@ function armadobebida(caso){
         MensajeComida = MensajeComida +"\n" + resultado.descripcion +" - " + resultado.precio;
     }
 }
+ */
 
 
 
-function menuListado(){
-    let salida=true;
-    while(salida){
-        let Nlistado = prompt("Seleccione el listado <Ingreso de PEDIDO> \n\n\nProcesando..."+"\n\n1. Listado de Socios   \n2. Listado de productos\n3. Agregar Producto\nVolver al menu Principal            - <Ingrese X>");    
-        let mensaje="";
-        switch(Nlistado){
-            case"x":
-                salida=false;
-                break;
-            case"X":
-                salida=false;
-                break;
-            case"1":
-                mensaje=mostrar_listado();
-                alert(mensaje);
-                break;
-            case"2":
-                mensaje=mostrar_listado_producto();
-                alert("Listado de productos\n"+mensaje);
-                break;           
-            case"3":
-                agregaProducto();
-                break;
-            default:
-                break;
-        }
-    }
-}
-
-function agregaProducto(){
-    let mayor_indice = 0
-    for (let i = 0; i < coleccion_productos.length; i++) {
-        let indice1 = coleccion_productos[i].indice;
-        if(indice1>mayor_indice){
-            mayor_indice=indice1
-        }
-       
-    }
-    mayor_indice=mayor_indice+1;
-    let tipo1=prompt("Ingrese tipo de producto");
-    let descripcion1 =prompt("Ingrese descripcion");
-    let precio1= prompt("Ingrese precio del producto");
-    if (tipo1==""||descripcion1==""||precio1==""){
-        alert("Faltan datos para el ingreso de producto");
-        return;
-    }
-    if(isNaN(precio1)){
-        alert("Error.\nEl PRECIO ingresado debe ser numero");
-        return;
-    }
-    let productonuevo = new Producto(mayor_indice,tipo1,descripcion1,precio1);
-    coleccion_productos.push(productonuevo);
-}
-
-function mostrar_listado() {
-    let stock = "";
-    for (let i = 0; i < coleccion_clientes.length; i++) {
-        stock += "\n" + coleccion_clientes[i].mostrarListado();
-    }
-    return stock;
-}
-
-function mostrar_listado_producto() {
-    let stock = "";
-    for (let i = 0; i < coleccion_productos.length; i++) {
-        stock += "\n" + coleccion_productos[i].mostrarListado();
-    }
-    return stock;
-}
-function listado_Producto(queopcion) {
-    let stockp = "";
-    for (let i = 0; i < coleccion_productos.length; i++) {
-        if(queopcion === coleccion_productos[i].tipo){
-            stockp += "\n< " + coleccion_productos[i].indice + " >  » $" + coleccion_productos[i].precio + " - " + coleccion_productos[i].descripcion;
-        }
-    }
-    return stockp;
-}
 
 
-// cuando esta todo cargado se le pide datos para ingresar al sistema
 
-//window.addEventListener('load', function() {
-//     sistema();
-//});
