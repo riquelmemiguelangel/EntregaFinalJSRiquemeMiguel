@@ -82,12 +82,12 @@ class GestionarProductos{
 
                                 <div class="p-3 d-flex flex-column w-60 h-150">
                                     <h3>${descripcion}</h3>
-                                    <p>${tipo}</p>
+                                    <h4>${tipo}</h4>
                                     <p>Cantidad disponible: ${stock}</p>
                                 </div>
 
                                 <div class="d-flex align-items-center justify-content-center flex-column w-20 h-150">
-                                    <p class="precio">$${precio}</p>
+                                    <p class="tLg">$${precio}</p>
                                     
                                     <a href="javascript:addCarrito(${indice})"  class="btn btn-primary"> Agregar al pedido </a>
                                 </div>

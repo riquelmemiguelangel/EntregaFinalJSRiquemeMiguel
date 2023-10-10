@@ -4,6 +4,7 @@ let productos = new Array() ;
 let venta = new Array ();
 let gestor ;
 let mensajeventa="";
+let mensajeprecio="";
 const key_carrito = "carrito";
 let acu_total = 0;
 let descuento = false;
@@ -58,25 +59,37 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 function addCarrito (indice){
     let resultado = coleccion_productos.find((w) =>  w.indice == indice);
-   mensajeventa = mensajeventa + "<br>      ---> " + resultado.descripcion + " precio :$"+resultado.precio;
-   
-   acu_total = acu_total + resultado.precio;
-   if(descuento){
+    mensajeventa = mensajeventa + "<br> ---> " + resultado.descripcion ;
+    mensajeprecio= mensajeprecio + "<br> $"+resultado.precio;
+    acu_total = acu_total + resultado.precio;
+    if(descuento){
         totaldescuento=acu_total*20/100;
         mensajedescuento= "Descuento de $" + totaldescuento;
-   }else{
+    }else{
         mensajedescuento="Sin descuento";
-   }
-   const detalleCarrito = document.querySelector("#pedidolista");
-    detalleCarrito.innerHTML = "" ;  
-    const row = document.createElement("div");
-    row.classList.add("row");
-
-    row.innerHTML = `
-                        <div class="col-12 d-flex align-items-center p-2 border-bottom">
-                            <h3> ${mensajeventa} <br> <br>Totalpedido ${acu_total} <br> ${mensajedescuento}</h3>                                    
+    }
+   
+    const detalleCarrito = document.querySelector("#pedidolista");
+    detalleCarrito.inenrHTML ="";  
+    //const row = document.createElement("div");
+    //row.classList.add("row");
+    detalleCarrito.innerHTML = `
+                        <div class="d-flex">
+                            <h3>---> PRODUCTO <---- ${mensajeventa} <br> <br>Total pedido -> <br> ${mensajedescuento}</h3>                                    
                         </div>
                     `
-    detalleCarrito.append(row);
+    //detalleCarrito.append(row);
      
+
+   const detalleVenta =document.querySelector("#pedidoprecio");
+    detalleVenta.innerHTML="";
+    const row2 =document.createElement("div");
+    row2.classList.add("row");
+    row2.innerHTML = `
+                        <div class="d-flex">
+                            <h3>PRECIO ${mensajeprecio} <br> <br>$${acu_total}</h3>                                    
+                        </div>
+                    `
+    detalleVenta.append(row2);
+
 }

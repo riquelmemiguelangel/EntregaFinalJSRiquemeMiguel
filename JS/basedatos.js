@@ -1,11 +1,12 @@
 //datos de los clientes/usuarios
 class Cliente {
-    constructor(nro_cliente,nombre,apellido,direccion,socio){
+    constructor(nro_cliente,nombre,apellido,direccion,socio,foto){
         this.nro_cliente = nro_cliente ;
         this.nombre = nombre;
         this.apellido = apellido;
         this.direccion = direccion;
         this.socio = socio;
+        this.foto=foto;
     }  
 
     getDatos(){
@@ -22,13 +23,16 @@ class Cliente {
     mostrarListado(){
         return "--"+this.nombre+" - "+this.apellido;
     }
+    getfoto(){
+        return this.foto;
+    }
 }
 //Carga de datos BD clientes/usuarios
-let cliente0 =  new Cliente(0,"Usuario","Administrador","LOCAL","N");
-let cliente1 =  new Cliente(1,"Pablo","Perez","Cabildo 123 - San Miguel","Y");
-let cliente2 =  new Cliente(1,"Alberto","Milei","Mitre 345 - San Miguel","Y");
-let cliente3 =  new Cliente(3,"Patricia","Massa","Paso alto 567 - San Miguel","N");
-let cliente4 =  new Cliente(4,"Sergio","Bullrich","San Benito 789 - San Miguel","N");
+let cliente0 =  new Cliente(0,"Usuario","Administrador","LOCAL","N","00.png");
+let cliente1 =  new Cliente(1,"Pablo","Perez","Cabildo 123 - San Miguel","Y","01.png");
+let cliente2 =  new Cliente(1,"Alberto","Milei","Mitre 345 - San Miguel","Y","02.png");
+let cliente3 =  new Cliente(3,"Patricia","Massa","Paso alto 567 - San Miguel","N","03.png");
+let cliente4 =  new Cliente(4,"Sergio","Bullrich","San Benito 789 - San Miguel","N","04.png");
 
 
 let coleccion_clientes = new Array();
@@ -54,6 +58,7 @@ class Login {
     getCliente(){
         return this.cliente;
     }
+
 }
 
 //Carga de logueo

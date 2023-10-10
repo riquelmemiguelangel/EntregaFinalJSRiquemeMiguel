@@ -42,11 +42,17 @@ boton.addEventListener("click", function (evento) {
 // borrar local storage
 const boton2 = document.querySelector("#logueoout");
 boton2.addEventListener("click", function (evento) {
-    alert("borrado");
+
+    Swal.fire('genial');
+
      localStorage.removeItem("usuarioData");
 });
+
 //Ingreso de usuario - validar descuento
 function checkearCredenciales(user, pass) {
+    //let foto = 
+
+    
     let login = colleccion_logines.find((l) => l.user === user && l.pass == pass);
     if (login) {
         apeynom=login.getCliente().getNombreCompleto();
@@ -55,6 +61,9 @@ function checkearCredenciales(user, pass) {
         logueoapeynom.innerText= apeynom;
         let descontar="";
         let logueodescuento =document.getElementById("descuentocliente");
+        let fotoaux=(login.getCliente().getfoto());
+        document.getElementById("fotoUsuario").src="images/usuarios/"+fotoaux;
+
         if(login.getCliente().getDescuento()=="Y"){
             descontar="Y";
             descuento=true;
@@ -80,8 +89,6 @@ function comienzo(){
             let lsusuario1= storedData.nombre;
             
             let lsusuario2= storedData.contrasena;
-            //let lsusuario3= storedData.apeynom;
-            //let lsusuario4= storedData.descuento;
             checkearCredenciales(lsusuario1,lsusuario2);
         }else{
             alert("localstorage vacio");
