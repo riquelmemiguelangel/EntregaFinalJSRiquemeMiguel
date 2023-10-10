@@ -91,7 +91,12 @@ function comienzo(){
             let lsusuario2= storedData.contrasena;
             checkearCredenciales(lsusuario1,lsusuario2);
         }else{
-            alert("localstorage vacio");
+            //alert("localstorage vacio");
+            Swal.fire(
+                'No hay un Usuario Almacenado?',
+                'ingresa un usuario !',
+                'question'
+              )
         }
 }
 
