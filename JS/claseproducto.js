@@ -40,19 +40,19 @@ coleccion_productos.push(producto8);
 
 
 class GestionarProductos{
-    iniciar(){
-        productos = [
-            {
-                "indice": 1,
-                "tipo": "comida",
-                "descripcion": "pancho",
-                "precio":500 ,
-                "stock": 50,
-                "img": "pancho.jpeg"
-            },
-        ]
-        this.cargarProductos(productos);
-    }
+    // iniciar(){
+    //     productos = [
+    //         {
+    //             "indice": 1,
+    //             "tipo": "comida",
+    //             "descripcion": "pancho",
+    //             "precio":500 ,
+    //             "stock": 50,
+    //             "img": "pancho.jpeg"
+    //         },
+    //     ]
+    //     this.cargarProductos(productos);
+    // }
   
 
 

@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     if(localStorage.getItem("usuarioData")){
         gestor = new GestionarProductos();
-        gestor.iniciar();
+        gestor.cargarProductos();
         let storedData = JSON.parse(localStorage.getItem("usuarioData"));
         
         let lsusuario1= storedData.nombre;

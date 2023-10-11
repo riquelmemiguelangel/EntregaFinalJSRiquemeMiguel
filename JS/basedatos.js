@@ -99,22 +99,3 @@ class Producto {
         return this.descripcion+" -- "+this.tipo+" - $"+this.precio;
     }
 }
-//Carga de datos BD PRODUCTOS
-let producto1 = new Producto(1,"Bebida","Gaseosa",700);
-let producto2 = new Producto(2,"Bebida","Agua",500);
-let producto3 = new Producto(3,"Bebida","Cafe",600);
-let producto4 = new Producto(4,"Comida","Hamburguesa",900);
-let producto5 = new Producto(5,"Comida","Pancho",650);
-let producto6 = new Producto(6,"Comida","Emparedado Jamon y queso",800);
-let producto7 = new Producto(7,"Postre","Helado dulce de leche",650);
-let producto8 = new Producto(8,"Postre","Torta ricota",680);
-
-let coleccion_productos = new Array();
-coleccion_productos.push(producto1);
-coleccion_productos.push(producto2);
-coleccion_productos.push(producto3);
-coleccion_productos.push(producto4);
-coleccion_productos.push(producto5);
-coleccion_productos.push(producto6);
-coleccion_productos.push(producto7);
-coleccion_productos.push(producto8);
