@@ -40,28 +40,28 @@ coleccion_productos.push(producto8);
 
 
 class GestionarProductos{
-    // iniciar(){
-    //     productos = [
-    //         {
-    //             "indice": 1,
-    //             "tipo": "comida",
-    //             "descripcion": "pancho",
-    //             "precio":500 ,
-    //             "stock": 50,
-    //             "img": "pancho.jpeg"
-    //         },
-    //     ]
-    //     this.cargarProductos(productos);
-    // }
+    iniciar(){
+        productos = [
+            {
+                "indice": 1,
+                "tipo": "comida",
+                "descripcion": "pancho",
+                "precio":500 ,
+                "stock": 50,
+                "img": "pancho.jpeg"
+            },
+        ]
+        this.cargarProductos(productos);
+    }
   
 
 
     cargarProductos(productos){
         //const divProductos = document.getElementById("productos")
-
-        const divProductos = document.querySelector("#productos")
+        alert("hasta aca ---- ");
+        const divProductos = document.querySelector("#productos");
         divProductos.innerHTML = "" ;
-
+        
         if (coleccion_productos.length == 0 ){
             console.log("No se han encontrado productos");
         }else{

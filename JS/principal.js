@@ -79,6 +79,7 @@ function checkearCredenciales(user, pass) {
         localStorage.setItem("usuarioData", JSON.stringify(usuarioData));
     } else {
         alert("Credenciales incorrectas");
+
     }
 }
 
@@ -92,6 +93,18 @@ function comienzo(){
             checkearCredenciales(lsusuario1,lsusuario2);
         }else{
             alert("localstorage vacio");
+            Swal.fire(
+                'Good job!',
+                'You clicked the button!',
+                'success'
+              );
+              Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Your work has been saved',
+                showConfirmButton: false,
+                timer: 1500
+              });
         }
 }
 

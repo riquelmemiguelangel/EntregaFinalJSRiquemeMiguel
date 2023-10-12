@@ -22,8 +22,12 @@ document.addEventListener("DOMContentLoaded",()=>{
     ///// ACA INICIAMOS EL DOM DESDE JS - > PEDIDO.HTML
 
     if(localStorage.getItem("usuarioData")){
+        //alert("aqui");
         gestor = new GestionarProductos();
-        gestor.cargarProductos();
+        
+        gestor.iniciar();
+        alert("aqui");
+        //gestor.iniciar.cargarProductos();
         let storedData = JSON.parse(localStorage.getItem("usuarioData"));
         
         let lsusuario1= storedData.nombre;
@@ -52,6 +56,13 @@ document.addEventListener("DOMContentLoaded",()=>{
         usuarioInfo.append(row2);
     }else{
         alert("localstorage vacio 22");
+        // Swal.fire({
+        //     position: 'top-end',
+        //     icon: 'success',
+        //     title: 'Your work has been saved',
+        //     showConfirmButton: false,
+        //     timer: 1500
+        //   });
     }
 })
 
