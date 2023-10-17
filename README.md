@@ -1,7 +1,10 @@
 Entrega FINAL-RIQUELME-Miguel-Angel
 
 # Entrega FINAL
+JS:
+SE emplea javascript para trabajar los datos por eventos y codigo  .
 
+DW:
 IMAGENES: En este proyecto se eligieron imagenes de poco tamaño, no se agrego video, todo esto para optimizar el rendimiento.
 
 Solo se agrego un mapa para aplicar codigo que conecta a otro elemento web.

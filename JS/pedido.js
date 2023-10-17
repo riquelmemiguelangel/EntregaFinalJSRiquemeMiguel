@@ -28,6 +28,15 @@ const botonA = document.querySelector("#productoSeleccion2");
 botonA.addEventListener("click", function (evento) {
 cargaListaDeProductos("Comida");
 });
+const botonB = document.querySelector("#productoSeleccion3");
+botonB.addEventListener("click", function (evento) {
+cargaListaDeProductos("Bebida");
+});
+const botonC = document.querySelector("#productoSeleccion4");
+botonC.addEventListener("click", function (evento) {
+cargaListaDeProductos("Postre");
+});
+
 const botonCompra = document.querySelector("#guardaPedido");
 botonCompra.addEventListener("click", function (evento) {
     let storeNumeroFactura = JSON.parse(localStorage.getItem("numeroFactura"));
