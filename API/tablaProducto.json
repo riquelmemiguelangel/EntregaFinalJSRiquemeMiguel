@@ -1,0 +1,11 @@
+[
+    {"index":1,"tipo":"Bebida","descripcion":"Gaseosa","precio":600,"stock":50,"imagen":"gaseosa.jpeg"},
+    {"index":2,"tipo":"Bebida","descripcion":"Jugo de naranja","precio":700,"stock":50,"imagen":"jugonaranja.jpeg"},
+    {"index":3,"tipo":"Bebida","descripcion":"Cafe","precio":300,"stock":50,"imagen":"cafe.jpeg"},
+    {"index":4,"tipo":"Comida","descripcion":"Hamburguesa","precio":600,"stock":50,"imagen":"hamburguesa.jpeg"},
+    {"index":5,"tipo":"Comida","descripcion":"Pancho","precio":500,"stock":50,"imagen":"pancho.jpeg"},
+    {"index":6,"tipo":"Comida","descripcion":"Emparedado Jamon y queso","precio":800,"stock":50,"imagen":"jyq.jpeg"},
+    {"index":7,"tipo":"Postre","descripcion":"Helado dulce de leche","precio":600,"stock":50,"imagen":"helado.jpeg"},
+    {"index":8,"tipo":"Postre","descripcion":"Torta ricota","precio":700,"stock":50,"imagen":"ricota.jpeg"}
+]      
+    

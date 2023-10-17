@@ -1,3 +1,15 @@
+
+class Venta{
+    constructor(indice,nfactura,descripcion,precio,cantidad){
+        this.indice=indice;
+        this.nfactura=nfactura;
+        this.descripcion=descripcion;
+        this.precio=precio;
+        this.cantidad=cantidad
+
+    }
+}
+let coleccion_venta= new Array();
 //datos de los clientes/usuarios
 class Cliente {
     constructor(nro_cliente,nombre,apellido,direccion,socio,foto){
@@ -23,6 +35,7 @@ class Cliente {
     mostrarListado(){
         return "--"+this.nombre+" - "+this.apellido;
     }
+    
     getfoto(){
         return this.foto;
     }
@@ -85,6 +98,7 @@ colleccion_logines.push(login3);
 colleccion_logines.push(login4);
 
 // datos de los productos
+
 class Producto {
     constructor(indice,tipo,descripcion,precio){
         this.indice = indice ;

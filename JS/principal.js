@@ -23,6 +23,10 @@ let pass;
 let Nusuario;
 let bandera1;
 
+document.addEventListener("DOMContentLoaded",()=>{
+    comienzo();
+})
+
 // Obtener referencia a botón
 const boton = document.querySelector("#logueo");
 boton.addEventListener("click", function (evento) {
@@ -83,7 +87,7 @@ function checkearCredenciales(user, pass) {
     }
 }
 
-comienzo();
+//comienzo();
 function comienzo(){
         if(localStorage.getItem("usuarioData")){
             let storedData = JSON.parse(localStorage.getItem("usuarioData"));
@@ -93,11 +97,11 @@ function comienzo(){
             checkearCredenciales(lsusuario1,lsusuario2);
         }else{
             alert("localstorage vacio");
-            Swal.fire(
-                'Good job!',
-                'You clicked the button!',
-                'success'
-              );
+            // Swal.fire(
+            //     'Good job!',
+            //     'You clicked the button!',
+            //     'success'
+            //   );
               Swal.fire({
                 position: 'top-end',
                 icon: 'success',
