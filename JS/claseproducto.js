@@ -27,31 +27,6 @@ let producto6 = new Producto(6,"Comida","Emparedado Jamon y queso",800,50,"jyq.j
 let producto7 = new Producto(7,"Postre","Helado dulce de leche",600,50,"helado.jpeg");
 let producto8 = new Producto(8,"Postre","Torta ricota",700,50,"ricota.jpeg");
 
-//let coleccion_productos = new Array();
-// coleccion_productos.push(producto1);
-// coleccion_productos.push(producto2);
-// coleccion_productos.push(producto3);
-// coleccion_productos.push(producto4);
-// coleccion_productos.push(producto5);
-// coleccion_productos.push(producto6);
-// coleccion_productos.push(producto7);
-// coleccion_productos.push(producto8);
-debugger;
-
-
-
-
-  
-    // .then(data => {
-    //     data.forEach(producto => {
-           
-    //         alert( producto.descripcion);
-    //         coleccion_productos.push(producto.index,producto.tipo,producto.descripcion.producto.precio,producto.stock,producto.imagen);
-    //       });
-    // })
-
-   // index":2,"tipo":"Bebida","descripcion":"Jugo de naranja","precio":700,"stock":50,"imagen":"jugonaranja.jpeg"}
-
 
 class GestionarProductos{
     iniciar(){

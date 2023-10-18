@@ -209,7 +209,7 @@ function addCarrito (indice){
                     //constructor(indice,nfactura,descripcion,precio,cantidad)
                 let venta =  new Venta(elemento1.index,numeroFactura.numero,elemento1.descripcion,elemento1.precio,1);
                 coleccion_venta.push(venta);
-                console.log(coleccion_venta);
+                //console.log(coleccion_venta);
                 localStorage.setItem("coleccion_venta", JSON.stringify(coleccion_venta));
 
             }

@@ -1,8 +1,41 @@
-let coleccion_ventaA = new Array();
+//let coleccion_ventaA = new Array();
 
 
 //cuando este todo cargado recien ahi ejecuta 
-document.addEventListener("DOMContentLoaded",()=>{
+//document.addEventListener("DOMContentLoaded",()=>{
+
+
+    
+const divProductos = document.getElementById("listado");
+let coleccion_ventaX = JSON.parse(localStorage.getItem("coleccion_venta"));
+
+coleccion_ventaX.forEach((item)=> {
+    alert(item.descripcion);
+    alert(item.precio);
+
+    let div = document.createElement("div")
+    div.innerHTML = `
+      
+
+                    <div class="p-3 d-flex flex-column w-60 h-150">
+                        <h3>${item.descripcion}</h3>
+                        <p>Cantidad disponible: ${item.descripcion}</p>
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-center flex-column w-20 h-150">
+                        <p class="tLg">$${item.precio}</p>
+                        
+                       
+                    </div>
+                    `;
+    divProductos.appendChild(div);
+
+
+})
+//})
+
+//cuando este todo cargado recien ahi ejecuta 
+//document.addEventListener("DOMContentLoaded",()=>{
 
 
     //alert("facturas");
@@ -12,8 +45,8 @@ document.addEventListener("DOMContentLoaded",()=>{
     //localStorage.setItem("coleccion_venta", JSON.stringify(coleccion_venta));
 
     //let coleccion_ventaX = new Array();
-    if(localStorage.getItem("coleccion_venta")){
-        let coleccion_ventaX = JSON.parse(localStorage.getItem("coleccion_venta"));
+   // if(localStorage.getItem("coleccion_venta")){
+        
         //alert(coleccion_ventaX[1].descripcion); 
 
         //console.log(coleccion_ventaX[1].descripcion);  
@@ -21,14 +54,7 @@ document.addEventListener("DOMContentLoaded",()=>{
       //   alert(coleccion_ventaX[i].descripcion);
      //}
 
-       coleccion_ventaX => coleccion_ventaX.forEach(element => {
-        alert(element.descripcion);
-       }); 
         
-            
-
-    }
-    
     // for(let i=0; i<= coleccion_ventax.length-1;i++){
     //     alert(coleccion_ventaX[i].descripcion);
     // }
@@ -69,4 +95,3 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 
 
-});
