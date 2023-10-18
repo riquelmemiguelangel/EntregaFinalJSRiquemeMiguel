@@ -23,7 +23,12 @@ let numeroFactura ={
 
 
 
-// borrar local storage
+// carga de listados de productos
+
+const botonAAA = document.querySelector("#productoSeleccion1");
+botonAAA.addEventListener("click", function (evento) {
+cargaListaDeProductos("todo");
+});
 const botonA = document.querySelector("#productoSeleccion2");
 botonA.addEventListener("click", function (evento) {
 cargaListaDeProductos("Comida");
@@ -37,14 +42,20 @@ botonC.addEventListener("click", function (evento) {
 cargaListaDeProductos("Postre");
 });
 
+//class Venta{
+  // constructor(indice,nfactura,descripcion,precio,cantidad){
 const botonCompra = document.querySelector("#guardaPedido");
 botonCompra.addEventListener("click", function (evento) {
+
+
     let storeNumeroFactura = JSON.parse(localStorage.getItem("numeroFactura"));
-   
+    //let ventaActual = new Venta();
+
+
     storeNumeroFactura.numero = storeNumeroFactura.numero +1;
-    let nfactura = storeNumeroFactura.numero;
+    //let nfactura = storeNumeroFactura.numero;
     localStorage.setItem("numeroFactura", JSON.stringify(storeNumeroFactura));
-    alert(storeNumeroFactura.numero);
+    //alert(storeNumeroFactura.numero);
 });
 
 function cargaListaDeProductos(filtro1){
@@ -56,11 +67,9 @@ function cargaListaDeProductos(filtro1){
     .then(response => response.json())
     .then(data =>{
         data.forEach(elemento1 => {
-            if(elemento1.tipo == filtro1){
 
-            
-
-                let prod = document.createElement("div");
+            if(elemento1.tipo == filtro1 || filtro1 == "todo"){
+                 let prod = document.createElement("div");
                 //Dandole css al DOM desde JS
                 prod.classList.add('col-12', 'h200', 'border', 'bg-white', 'rounded', 'mt-3', 'd-flex', 'align-items-center', 'p-3', 'flex-row', 'producto');
             
@@ -122,6 +131,7 @@ document.addEventListener("DOMContentLoaded",()=>{
         }else{
             descuento=false;
         }
+        //mostrar datos de usuario del Localstorage
         row2.innerHTML = `
                             <div>
                                 <h3>DATOS DE USUARIO</h3> 
@@ -200,6 +210,8 @@ function addCarrito (indice){
                 let venta =  new Venta(elemento1.index,numeroFactura.numero,elemento1.descripcion,elemento1.precio,1);
                 coleccion_venta.push(venta);
                 console.log(coleccion_venta);
+                localStorage.setItem("coleccion_venta", JSON.stringify(coleccion_venta));
+
             }
 
         })
