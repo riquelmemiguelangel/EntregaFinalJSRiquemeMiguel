@@ -6,9 +6,21 @@ class Venta{
         this.descripcion=descripcion;
         this.precio=precio;
         this.cantidad=cantidad
-
     }
 }
+
+class Factura{
+    constructor(nfactura,apeynom,parcial,descuento,total){
+        this.nfactura=nfactura;
+        this.apeynom=apeynom;
+        this.parcial=parcial;
+        this.descuento=descuento;
+        this.total=total
+    }
+}
+
+
+
 let coleccion_venta= new Array();
 //datos de los clientes/usuarios
 class Cliente {

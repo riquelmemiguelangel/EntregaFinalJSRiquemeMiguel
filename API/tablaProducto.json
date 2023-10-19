@@ -6,6 +6,11 @@
     {"index":5,"tipo":"Comida","descripcion":"Pancho","precio":500,"stock":50,"imagen":"pancho.jpeg"},
     {"index":6,"tipo":"Comida","descripcion":"Emparedado Jamon y queso","precio":800,"stock":50,"imagen":"jyq.jpeg"},
     {"index":7,"tipo":"Postre","descripcion":"Helado dulce de leche","precio":600,"stock":50,"imagen":"helado.jpeg"},
-    {"index":8,"tipo":"Postre","descripcion":"Torta ricota","precio":700,"stock":50,"imagen":"ricota.jpeg"}
+    {"index":8,"tipo":"Postre","descripcion":"Torta ricota","precio":700,"stock":50,"imagen":"ricota.jpeg"},
+    {"index":9,"tipo":"Postre","descripcion":"Flan","precio":550,"stock":50,"imagen":"flan.jpeg"},
+    {"index":10,"tipo":"Comida","descripcion":"Empanada","precio":900,"stock":50,"imagen":"empanada.jpeg"},
+    {"index":11,"tipo":"Comida","descripcion":"Milanesa complera","precio":1100,"stock":50,"imagen":"milanesa.jpeg"},
+    {"index":12,"tipo":"Comida","descripcion":"Pizza","precio":700,"stock":50,"imagen":"pizza.jpeg"},
+    {"index":13,"tipo":"Bebida","descripcion":"Te","precio":300,"stock":50,"imagen":"te.jpeg"}
 ]      
     

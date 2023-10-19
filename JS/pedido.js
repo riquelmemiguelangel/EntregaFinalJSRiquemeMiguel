@@ -5,7 +5,7 @@ let venta = new Array ();
 let gestor ;
 let mensajeventa="";
 let mensajeprecio="";
-//const key_carrito = "carrito";
+
 let acu_total = 0;
 let descuento = false;
 let totaldescuento="";
@@ -43,19 +43,17 @@ cargaListaDeProductos("Postre");
 });
 
 //class Venta{
-  // constructor(indice,nfactura,descripcion,precio,cantidad){
+// constructor(indice,nfactura,descripcion,precio,cantidad){
 const botonCompra = document.querySelector("#guardaPedido");
 botonCompra.addEventListener("click", function (evento) {
-
-
     let storeNumeroFactura = JSON.parse(localStorage.getItem("numeroFactura"));
-    //let ventaActual = new Venta();
-
-
     storeNumeroFactura.numero = storeNumeroFactura.numero +1;
-    //let nfactura = storeNumeroFactura.numero;
     localStorage.setItem("numeroFactura", JSON.stringify(storeNumeroFactura));
-    //alert(storeNumeroFactura.numero);
+    //  constructor(nfactura,apeynom,parcial,descuento,total){
+    let factura =  new Factura(storeNumeroFactura.numero -1 ,usuarioData.apeynom,acu_total,totaldescuento,acu_total - totaldescuento);
+    coleccion_factura.push(factura);
+    localStorage.setItem("coleccion_factura", JSON.stringify(coleccion_factura));
+    
 });
 
 function cargaListaDeProductos(filtro1){
@@ -122,7 +120,7 @@ document.addEventListener("DOMContentLoaded",()=>{
                 numeroFactura=JSON.parse(localStorage.getItem("numeroFactura"));
             }
         }else{
-            //localStorage.setItem("numeroFactura", JSON.stringify(numeroFactura));
+            
         }
         const row2 = document.createElement("div");
         row2.classList.add("row");
@@ -146,14 +144,14 @@ document.addEventListener("DOMContentLoaded",()=>{
                         `;
         usuarioInfo.append(row2);
     }else{
-        alert("localstorage vacio 22");
-        // Swal.fire({
-        //     position: 'top-end',
-        //     icon: 'success',
-        //     title: 'Your work has been saved',
-        //     showConfirmButton: false,
-        //     timer: 1500
-        //   });
+      
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'localstorage vacio ingrese usuario',
+            showConfirmButton: false,
+            timer: 1500
+          });
     }
 
     const divProductos = document.querySelector("#productos");
@@ -191,13 +189,10 @@ document.addEventListener("DOMContentLoaded",()=>{
         });
     })
    .catch((error) => alert("error al obtener los datos"))
-        //gestor = new GestionarProductos();
-        //gestor.iniciar();
-        //gestor.iniciar.cargarProductos();
 
 })
 function addCarrito (indice){
-    //alert(indice);
+
     fetch("../API/tablaProducto.json")
 
     .then(response => response.json())
@@ -209,21 +204,15 @@ function addCarrito (indice){
                     //constructor(indice,nfactura,descripcion,precio,cantidad)
                 let venta =  new Venta(elemento1.index,numeroFactura.numero,elemento1.descripcion,elemento1.precio,1);
                 coleccion_venta.push(venta);
-                //console.log(coleccion_venta);
+          
                 localStorage.setItem("coleccion_venta", JSON.stringify(coleccion_venta));
-
             }
-
         })
     })
 }
 
 
 function addCarrito2 (rdescripcion,rprecio){
-    //let resultado = coleccion_productos.find((w) =>  w.indice == indice);
-
-
-
     mensajeventa = mensajeventa + "<br> ---> " + rdescripcion ;
     mensajeprecio= mensajeprecio + "<br> $"+rprecio;
    
@@ -235,19 +224,15 @@ function addCarrito2 (rdescripcion,rprecio){
     }else{
         mensajedescuento="Sin descuento";
     }
-   //let venta = factura,rindex,rdescripcion,rprecio,cantidad;
+  
     const detalleCarrito = document.querySelector("#pedidolista");
     detalleCarrito.inenrHTML ="";  
-    //const row = document.createElement("div");
-    //row.classList.add("row");
+
     detalleCarrito.innerHTML = `
                         <div class="d-flex">
                             <h3>---> PRODUCTO <---- ${mensajeventa} <br> <br>Total pedido -> <br> ${mensajedescuento}</h3>                                    
                         </div>
                     `
-    //detalleCarrito.append(row);
-     
-
    const detalleVenta =document.querySelector("#pedidoprecio");
     detalleVenta.innerHTML="";
     const row2 =document.createElement("div");

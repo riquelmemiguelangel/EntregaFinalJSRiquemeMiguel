@@ -33,12 +33,21 @@ boton.addEventListener("click", function (evento) {
     let ingresousuario =document.getElementById("usuario").value;
     let ingresocontrasena =document.getElementById("contrasena").value;
     if (ingresousuario && ingresocontrasena) {
-        //alert(ingresousuario);
+       
         checkearCredenciales(ingresousuario,ingresocontrasena);
         document.getElementById("contrasena").value ="";
         document.getElementById("usuario").value ="";
     } else {
-        alert("Es necesario ingresar usuario y contraseña");
+                  
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Es necesario ingresar usuario y contraseña',
+            showConfirmButton: false,
+            color: 'blue',
+            background: 'orange',
+            timer: 2500
+        });
         return;
         
     }
@@ -47,15 +56,21 @@ boton.addEventListener("click", function (evento) {
 const boton2 = document.querySelector("#logueoout");
 boton2.addEventListener("click", function (evento) {
 
-    Swal.fire('genial');
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Se eleminan usuarios almacenados',
+        showConfirmButton: false,
+        color: 'blue',
+        background: 'orange',
+        timer: 2500
+    });
 
      localStorage.removeItem("usuarioData");
 });
 
 //Ingreso de usuario - validar descuento
 function checkearCredenciales(user, pass) {
-    //let foto = 
-
     
     let login = colleccion_logines.find((l) => l.user === user && l.pass == pass);
     if (login) {
@@ -82,13 +97,31 @@ function checkearCredenciales(user, pass) {
         usuarioData.descuento= descontar;
         localStorage.setItem("usuarioData", JSON.stringify(usuarioData));
     } else {
-        alert("Credenciales incorrectas");
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Credenciales Incorrectas',
+            showConfirmButton: false,
+            color: 'blue',
+            background: 'orange',
+            timer: 2500
+        });
 
     }
 }
 
 //comienzo();
 function comienzo(){
+
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Bienvenido al buffet digital',
+            showConfirmButton: false,
+            color: 'blue',
+            background: 'orange',
+            timer: 2500
+        });
         if(localStorage.getItem("usuarioData")){
             let storedData = JSON.parse(localStorage.getItem("usuarioData"));
             let lsusuario1= storedData.nombre;
@@ -96,16 +129,10 @@ function comienzo(){
             let lsusuario2= storedData.contrasena;
             checkearCredenciales(lsusuario1,lsusuario2);
         }else{
-            alert("localstorage vacio");
-            // Swal.fire(
-            //     'Good job!',
-            //     'You clicked the button!',
-            //     'success'
-            //   );
               Swal.fire({
-                position: 'top-end',
+                position: 'center',
                 icon: 'success',
-                title: 'Your work has been saved',
+                title: 'Ingrese un socio',
                 showConfirmButton: false,
                 timer: 1500
               });
