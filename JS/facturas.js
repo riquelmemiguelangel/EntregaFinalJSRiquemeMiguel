@@ -3,6 +3,19 @@
 
 //cuando este todo cargado recien ahi ejecuta 
 document.addEventListener("DOMContentLoaded",()=>{
+    if(localStorage.getItem("coleccion_venta")){
+    }else{
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Almacenamiento vacio ingrese pedido',
+            showConfirmButton: true,
+            timer: 7500
+          });
+         setTimeout(function(){ location.href = '../index.html'},3000);
+
+    }
+
     const divProductos = document.getElementById("listado");
     let coleccion_ventaX = JSON.parse(localStorage.getItem("coleccion_venta"));
 

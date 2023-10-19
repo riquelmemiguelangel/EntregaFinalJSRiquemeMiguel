@@ -6,6 +6,8 @@ let gestor ;
 let mensajeventa="";
 let mensajeprecio="";
 
+let apeynomfac="";
+
 let acu_total = 0;
 let descuento = false;
 let totaldescuento="";
@@ -49,8 +51,9 @@ botonCompra.addEventListener("click", function (evento) {
     let storeNumeroFactura = JSON.parse(localStorage.getItem("numeroFactura"));
     storeNumeroFactura.numero = storeNumeroFactura.numero +1;
     localStorage.setItem("numeroFactura", JSON.stringify(storeNumeroFactura));
-    //  constructor(nfactura,apeynom,parcial,descuento,total){
-    let factura =  new Factura(storeNumeroFactura.numero -1 ,usuarioData.apeynom,acu_total,totaldescuento,acu_total - totaldescuento);
+    
+    
+    let factura =  new Factura(1 ,apeynomfac,acu_total,totaldescuento,acu_total - totaldescuento);
     coleccion_factura.push(factura);
     localStorage.setItem("coleccion_factura", JSON.stringify(coleccion_factura));
     
@@ -106,6 +109,7 @@ document.addEventListener("DOMContentLoaded",()=>{
         let lsusuario1= storedData.nombre;
         let lsusuario2= storedData.contrasena;
         let lsusuario3= storedData.apeynom;
+        apeynomfac=storedData.apeynom;
         let lsusuario4= storedData.descuento;
         let usuarioInfo = document.querySelector("#infousuario");
 
@@ -144,14 +148,18 @@ document.addEventListener("DOMContentLoaded",()=>{
                         `;
         usuarioInfo.append(row2);
     }else{
+
+
       
         Swal.fire({
-            position: 'top-end',
+            position: 'center',
             icon: 'success',
             title: 'localstorage vacio ingrese usuario',
-            showConfirmButton: false,
-            timer: 1500
+            showConfirmButton: true,
+            timer: 7500
           });
+         setTimeout(function(){ location.href = '../index.html'},3000);
+
     }
 
     const divProductos = document.querySelector("#productos");
