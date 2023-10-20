@@ -1,5 +1,4 @@
 
-let carrito = [] ;
 let productos = new Array() ;
 let venta = new Array ();
 let gestor ;
@@ -23,7 +22,7 @@ let numeroFactura ={
     numero:1
 };
 
-
+let nfac =0;
 
 // carga de listados de productos
 
@@ -48,15 +47,32 @@ cargaListaDeProductos("Postre");
 // constructor(indice,nfactura,descripcion,precio,cantidad){
 const botonCompra = document.querySelector("#guardaPedido");
 botonCompra.addEventListener("click", function (evento) {
-    let storeNumeroFactura = JSON.parse(localStorage.getItem("numeroFactura"));
-    storeNumeroFactura.numero = storeNumeroFactura.numero +1;
-    localStorage.setItem("numeroFactura", JSON.stringify(storeNumeroFactura));
-    
-    
-    let factura =  new Factura(1 ,apeynomfac,acu_total,totaldescuento,acu_total - totaldescuento);
+    if(localStorage.getItem("numeroFactura")){
+        numeroFactura = JSON.parse(localStorage.getItem("numeroFactura"));
+        nfac=numeroFactura.numero;
+        numeroFactura.numero++;
+        localStorage.setItem("numeroFactura", JSON.stringify(numeroFactura));
+    }else{
+        numeroFactura ={
+            numero:1
+        };
+        nfac=numeroFactura.numero;
+        localStorage.setItem("numeroFactura", JSON.stringify(numeroFactura));
+    }
+
+    let factura =  new Factura(nfac ,apeynomfac,acu_total,totaldescuento,acu_total - totaldescuento);
     coleccion_factura.push(factura);
     localStorage.setItem("coleccion_factura", JSON.stringify(coleccion_factura));
     
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Se registro pedido',
+        showConfirmButton: true,
+        timer: 7500
+      });
+     setTimeout(function(){ location.href = '../index.html'},3000);
+
 });
 
 function cargaListaDeProductos(filtro1){
@@ -148,8 +164,6 @@ document.addEventListener("DOMContentLoaded",()=>{
                         `;
         usuarioInfo.append(row2);
     }else{
-
-
       
         Swal.fire({
             position: 'center',
@@ -201,6 +215,8 @@ document.addEventListener("DOMContentLoaded",()=>{
 })
 function addCarrito (indice){
 
+
+    // Uso de fetch local
     fetch("../API/tablaProducto.json")
 
     .then(response => response.json())
@@ -212,7 +228,6 @@ function addCarrito (indice){
                     //constructor(indice,nfactura,descripcion,precio,cantidad)
                 let venta =  new Venta(elemento1.index,numeroFactura.numero,elemento1.descripcion,elemento1.precio,1);
                 coleccion_venta.push(venta);
-          
                 localStorage.setItem("coleccion_venta", JSON.stringify(coleccion_venta));
             }
         })
@@ -223,7 +238,6 @@ function addCarrito (indice){
 function addCarrito2 (rdescripcion,rprecio){
     mensajeventa = mensajeventa + "<br> ---> " + rdescripcion ;
     mensajeprecio= mensajeprecio + "<br> $"+rprecio;
-   
     acu_total = acu_total + rprecio;
     
     if(descuento){
@@ -235,7 +249,6 @@ function addCarrito2 (rdescripcion,rprecio){
   
     const detalleCarrito = document.querySelector("#pedidolista");
     detalleCarrito.inenrHTML ="";  
-
     detalleCarrito.innerHTML = `
                         <div class="d-flex">
                             <h3>---> PRODUCTO <---- ${mensajeventa} <br> <br>Total pedido -> <br> ${mensajedescuento}</h3>                                    
